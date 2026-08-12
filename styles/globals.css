@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 20% 96%;
+    --foreground: 0 0% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 16%;
+    --primary: 38 37% 61%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 12% 90%;
+    --secondary-foreground: 0 0% 16%;
+    --muted: 40 12% 90%;
+    --muted-foreground: 0 0% 56%;
+    --accent: 38 37% 61%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 0% / 0.08;
+    --input: 40 12% 90%;
+    --ring: 38 37% 61%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-luxury-cream text-luxury-text font-body antialiased;
+    background-image: url('/images/texture-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(248, 246, 241, 0.65);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-medium tracking-tight;
+  }
+
+  ::selection {
+    background: rgba(197, 165, 114, 0.3);
+    color: #2A2A2A;
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-luxury-gradient;
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.06)];
+  }
+
+  .luxury-border {
+    @apply border border-luxury-gold/20;
+  }
+
+  .magnetic-button {
+    @apply relative overflow-hidden transition-all duration-300 ease-out;
+  }
+
+  .magnetic-button::before {
+    content: '';
+    @apply absolute inset-0 bg-luxury-gradient-hover opacity-0 transition-opacity duration-300;
+  }
+
+  .magnetic-button:hover::before {
+    @apply opacity-100;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24;
+  }
+
+  .heading-xl {
+    @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-light leading-[0.9] tracking-tight;
+  }
+
+  .heading-lg {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-light leading-[0.95];
+  }
+
+  .heading-md {
+    @apply text-3xl sm:text-4xl md:text-5xl font-heading font-normal leading-tight;
+  }
+
+  .heading-sm {
+    @apply text-2xl sm:text-3xl font-heading font-normal leading-snug;
+  }
+
+  .body-lg {
+    @apply text-base sm:text-lg text-luxury-ash leading-relaxed;
+  }
+
+  .body-md {
+    @apply text-sm sm:text-base text-luxury-ash leading-relaxed;
+  }
+
+  .label-text {
+    @apply text-xs uppercase tracking-[0.2em] font-body font-medium text-luxury-gold;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .image-reveal {
+    @apply overflow-hidden;
+  }
+
+  .image-reveal img {
+    @apply transition-transform duration-700 ease-out hover:scale-105;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F6F1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A572;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8956A;
+}
+
+/* GSAP animations initial states */
+.gsap-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.gsap-reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.gsap-reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.gsap-scale {
+  opacity: 0;
+  transform: scale(0.95);
+}
