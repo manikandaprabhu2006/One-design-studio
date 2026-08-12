@@ -1,9 +1,0 @@
-{
-  "/(site)/page": "app/(site)/page.js",
-  "/(site)/testimonials/page": "app/(site)/testimonials/page.js",
-  "/(site)/faq/page": "app/(site)/faq/page.js",
-  "/(site)/contact/page": "app/(site)/contact/page.js",
-  "/(site)/gallery/page": "app/(site)/gallery/page.js",
-  "/(site)/projects/page": "app/(site)/projects/page.js",
-  "/(site)/projects/[slug]/page": "app/(site)/projects/[slug]/page.js"
-}
