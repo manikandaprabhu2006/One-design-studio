@@ -1,6 +1,22 @@
-import { User, Project, GalleryImage, Testimonial, Service, FAQ, ContactSubmission } from "@prisma/client";
+import {
+  User,
+  Project,
+  GalleryImage,
+  Testimonial,
+  Service,
+  FAQ,
+  ContactSubmission,
+} from "@prisma/client";
 
-export type { User, Project, GalleryImage, Testimonial, Service, FAQ, ContactSubmission };
+export type {
+  User,
+  Project,
+  GalleryImage,
+  Testimonial,
+  Service,
+  FAQ,
+  ContactSubmission,
+};
 
 export interface NavItem {
   label: string;
@@ -47,3 +63,7 @@ export interface Partner {
   name: string;
   logo: string;
 }
+
+/* -------------------------------- */
+/* NextAuth Type Augmentation        */
+/* -------------------------------- */
